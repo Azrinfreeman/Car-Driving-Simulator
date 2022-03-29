@@ -44,18 +44,22 @@ public class WheelController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            isPlayerRide = true;
-            isEngineStart = true;
+            if (!isPlayerRide)
+            {
+                isPlayerRide = true;
+            }
+
+           
         }
 
         if (isPlayerRide)
         {
 
-            if (isEngineStart)
+            if (!isEngineStart)
             {
 
                 engineStart.Play();
-                isEngineStart = false;
+                isEngineStart = true;
             }
             currentAcceleration = acceleration * (Input.GetAxis("Vertical") * 1f);
 
