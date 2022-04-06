@@ -28,23 +28,38 @@ public class WheelController : MonoBehaviour
 
     public bool isPlayerRide;
     public bool isEngineStart;
-
-
+    
     [Header("Sound Effects")]
     public AudioSource engineStart;
     public audio EngineAudio;
-
-
+    
 
     private void Start()
     {
         EngineAudio = GetComponent<audio>();
     }
+    private void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+
+            EngineAudio.PlayHorn();
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.H))
+        {
+            EngineAudio.StopHorn();
+
+
+        }
+    }
     private void FixedUpdate()
     {
-       // steeringWheel.localEulerAngles = Vector3.back * Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxTurnAngle, maxTurnAngle);
-       
+        // steeringWheel.localEulerAngles = Vector3.back * Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxTurnAngle, maxTurnAngle);
 
+       /// Debug.Log("Ishorning: "+isHorn);
         if (Input.GetKeyDown(KeyCode.F))
         {
             transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, 0f);
@@ -108,7 +123,7 @@ public class WheelController : MonoBehaviour
 
 
             steeringWheelAnimation.SetFloat("steer", Input.GetAxis("Horizontal"));
-            Debug.Log("currentAcceleration: " + currentAcceleration);
+           // Debug.Log("currentAcceleration: " + currentAcceleration);
         }
 
        

@@ -38,7 +38,8 @@ using Random = UnityEngine.Random;
         public AudioClip lowDecelClip;                                              // Audio clip for low deceleration
         public AudioClip highAccelClip;                                             // Audio clip for high acceleration
         public AudioClip highDecelClip;                                             // Audio clip for high deceleration
-        public AudioSource handBrake;
+        public AudioSource handBrake;                                               // Handbrake audio source here
+    public AudioSource carHorn;
         public float pitchMultiplier = 1f;                                          // Used for altering the pitch of audio clips
         public float lowPitchMin = 1f;                                              // The lowest possible pitch for the low sounds
         public float lowPitchMax = 6f;                                              // The highest possible pitch for the low sounds
@@ -57,6 +58,16 @@ using Random = UnityEngine.Random;
       //  public inputManager InputManager;
      //   private AIcontroller aicontroler;
         
+
+    public void PlayHorn()
+    {
+        carHorn.Play();
+    }
+
+    public void StopHorn()
+    {
+        carHorn.Pause();
+    }
     public void PlayHandBrake()
     {
         Debug.Log("My car velocoty : "+ myCar.velocity.magnitude);

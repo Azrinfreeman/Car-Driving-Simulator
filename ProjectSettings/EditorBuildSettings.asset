@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CarMovementScene.unity
+    guid: 65a6c58728666c84397635ad05be4a70
+  - enabled: 1
+    path: Assets/Scenes/CarParkingLesson.unity
+    guid: 0667c245f0bd61a42b47b2bced1540a9
+  - enabled: 1
+    path: Assets/Scenes/CarStructure.unity
+    guid: a4c94f87bdc3adb46812f5e0fb01288a
+  - enabled: 1
+    path: Assets/Scenes/learningScene.unity
+    guid: 2f102c07e371ea7438147534a3326ae3
   m_configObjects: {}

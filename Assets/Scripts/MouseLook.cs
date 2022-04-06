@@ -40,7 +40,13 @@ public class MouseLook : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            playerCam.fieldOfView = Mathf.Lerp(60, 10, 0.5f);
+            playerCam.fieldOfView = Mathf.Lerp(60, -15, 0.5f);
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            playerCam.fieldOfView = Mathf.Lerp(60, 60, 0.5f);
+
         }
 
     }
