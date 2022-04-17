@@ -43,6 +43,7 @@ public class WheelController : MonoBehaviour
     private void Start()
     {
         EngineAudio = GetComponent<audio>();
+        engineStart = GameObject.Find("EngineStart").GetComponent<AudioSource>();
         UIController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
     private void Update()

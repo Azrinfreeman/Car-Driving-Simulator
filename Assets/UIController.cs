@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController instance;
     [Header("PauseMenuVariables")]
     public GameObject PausePanel;
     public GameObject UIPanel;
@@ -13,12 +14,23 @@ public class UIController : MonoBehaviour
     public GameObject promptQuitPanel;
 
 
+    [Header("Pedometer and hints")]
+    //Pedometer and hints
+    public GameObject SpeedometerPanel;
+    public GameObject HintsPanel;
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
         PausePanel = GameObject.Find("PauseMenus");
         UIPanel = GameObject.Find("UI");
 
         promptQuitPanel = GameObject.Find("Prompt");
+        SpeedometerPanel = GameObject.Find("Speedometer");
+        HintsPanel = GameObject.Find("InCar");
 
         PausePanel.SetActive(false);
         promptQuitPanel.SetActive(false);

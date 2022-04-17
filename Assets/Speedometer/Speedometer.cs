@@ -21,6 +21,7 @@ public class Speedometer : MonoBehaviour
 
     private void Start()
     {
+        playerCar = GameObject.Find("Volvo S90").GetComponent<Rigidbody>();
         needleTranform = transform.Find("needle");
         speedLabelTemplateTransform = transform.Find("speedLabelTemplate");
         speedLabelTemplateTransform.gameObject.SetActive(false);

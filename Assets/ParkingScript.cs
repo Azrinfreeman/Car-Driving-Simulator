@@ -19,7 +19,7 @@ public class ParkingScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Car")
         {
 
             Debug.Log("Touching the park");

@@ -27,6 +27,7 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         playerCam = GetComponent<Camera>();
         UIController = GameObject.Find("Canvas").GetComponent<UIController>();
+        playerBody = GameObject.Find("Player").transform;
     }
 
     // Update is called once per frame

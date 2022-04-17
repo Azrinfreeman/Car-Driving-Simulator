@@ -26,6 +26,8 @@ using Random = UnityEngine.Random;
     private void Start()
     {
         myCar = GetComponent<Rigidbody>();
+        handBrake = GameObject.Find("handbrake").GetComponent<AudioSource>();
+        carHorn = GameObject.Find("horn").GetComponent<AudioSource>();
     }
     public enum EngineAudioOptions // Options for the engine audio
         {
