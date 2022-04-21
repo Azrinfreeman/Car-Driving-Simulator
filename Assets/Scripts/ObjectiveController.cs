@@ -14,7 +14,7 @@ public class ObjectiveController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        level = GetComponent<LevelController>();
+        level = GameObject.Find("Canvas").GetComponent<LevelController>();
         objective = GameObject.Find("objective").GetComponent<TextMeshProUGUI>();
     }
 

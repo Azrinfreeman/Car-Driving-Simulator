@@ -28,15 +28,22 @@ public class WheelController : MonoBehaviour
 
     public bool isPlayerRide;
     public bool isEngineStart;
+    float VerticalAxis;
+    float HorizontalAxis;
     
     [Header("Sound Effects")]
     public AudioSource engineStart;
     public audio EngineAudio;
+
+
+    [Header("UI Controller class")]
+    public UIController UIController;
     
 
     private void Start()
     {
         EngineAudio = GetComponent<audio>();
+        UIController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
     private void Update()
     {
@@ -57,6 +64,13 @@ public class WheelController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+
+        if (!UIController.isPausing)
+        {
+            VerticalAxis = Input.GetAxis("Vertical");
+            HorizontalAxis = Input.GetAxis("Horizontal");
+        }
+      
         // steeringWheel.localEulerAngles = Vector3.back * Mathf.Clamp((Input.GetAxis("Horizontal") * 100), -maxTurnAngle, maxTurnAngle);
 
        /// Debug.Log("Ishorning: "+isHorn);
@@ -84,7 +98,7 @@ public class WheelController : MonoBehaviour
                 engineStart.Play();
                 isEngineStart = true;
             }
-            currentAcceleration = acceleration * (Input.GetAxis("Vertical") * 1f);
+            currentAcceleration = acceleration * (VerticalAxis * 1f);
             
 
 
@@ -111,7 +125,7 @@ public class WheelController : MonoBehaviour
 
             //turning
 
-            currentTurnAngle = maxTurnAngle * Input.GetAxis("Horizontal");
+            currentTurnAngle = maxTurnAngle * HorizontalAxis;
 
             frontLeft.steerAngle = currentTurnAngle;
             frontRight.steerAngle = currentTurnAngle;
@@ -122,7 +136,7 @@ public class WheelController : MonoBehaviour
             UpdateWheel(backRight, backRightTransform);
 
 
-            steeringWheelAnimation.SetFloat("steer", Input.GetAxis("Horizontal"));
+            steeringWheelAnimation.SetFloat("steer", HorizontalAxis);
            // Debug.Log("currentAcceleration: " + currentAcceleration);
         }
 

@@ -12,23 +12,40 @@ public class MouseLook : MonoBehaviour
 
     float xRotation = 0f;
     float yRotation = 0f;
+    float mouseX;
+    float mouseY;
 
     [Header("Zoom Variable")]
     [SerializeField] Camera playerCam;
     [SerializeField] private float timeToZoom = 0.3f;
+
+
+    [Header("Other Classes")]
+    [SerializeField] UIController UIController;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         playerCam = GetComponent<Camera>();
+        UIController = GameObject.Find("Canvas").GetComponent<UIController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        if (!UIController.isPausing)
+        {
+            mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        
+        }
+        else
+        {
+            mouseX = 0f;
+            mouseY = 0f;
+
+        }
+
+
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90f);

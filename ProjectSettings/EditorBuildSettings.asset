@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CarMovementScene.unity
+    path: Assets/Scenes/CarMovementLesson.unity
     guid: 65a6c58728666c84397635ad05be4a70
   - enabled: 1
     path: Assets/Scenes/CarParkingLesson.unity
