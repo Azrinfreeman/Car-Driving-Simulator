@@ -65,6 +65,24 @@ public class UIController : MonoBehaviour
 
 
     }
+
+    public void ToMenu()
+    {
+        StartCoroutine(ReturnToMenu());
+    }
+
+    IEnumerator ReturnToMenu()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("MainMenu");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+
+            yield return null;
+        }
+    }
+
     public void quitPrompting()
     {
         promptQuitPanel.SetActive(true);

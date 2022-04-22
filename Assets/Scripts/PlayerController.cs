@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool isGrounded;
 
     public bool inCar = false;
-
+    bool toggle = false;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -61,7 +61,21 @@ public class PlayerController : MonoBehaviour
         {
 
             UIController.instance.SpeedometerPanel.SetActive(true);
-            UIController.instance.HintsPanel.SetActive(true);
+           // UIController.instance.HintsPanel.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.T))
+            {
+                toggle = !toggle;
+                if (toggle)
+                {
+                    UIController.instance.HintsPanel.SetActive(true);
+
+                }
+                else
+                {
+                    UIController.instance.HintsPanel.SetActive(false);
+
+                }
+            }
         }
 
     }

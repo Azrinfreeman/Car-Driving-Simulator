@@ -12,6 +12,15 @@ public class SceneController : MonoBehaviour
     [SerializeField] GameObject LoadingMenu;
     //[SerializeField] GameObject CurrentPage;
 
+    [Space(10)]
+    [Header("Main Menu to Start Game ")]
+    public GameObject MainMenu;
+    public GameObject StartGame;
+
+    [Space(10)]
+    [Header("Start Menu to LearningToDrive ")]
+    public GameObject LearningToDrive;
+
     [Header("For loading screen fade")]
     [SerializeField] CanvasGroup canvasGroup;
     // Start is called before the first frame update
@@ -19,11 +28,45 @@ public class SceneController : MonoBehaviour
     {
         sliderProgress = GameObject.Find("Slider").GetComponent<Slider>();
         LoadingMenu = GameObject.Find("LoadingMenu");
+        MainMenu = GameObject.Find("MainMenu");
+        StartGame = GameObject.Find("StartGame");
+        LearningToDrive = GameObject.Find("LearningToDrive");
 
-    
+
         LoadingMenu.SetActive(false);
+        //MainMenu.SetActive(false);
+        StartGame.SetActive(false);
+        LearningToDrive.SetActive(false);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    public void BackToStartMenu()
+    {
+        LearningToDrive.SetActive(false);
+        StartGame.SetActive(true);
+    }
+    public void GoToStartGame()
+    {
+        MainMenu.SetActive(false);
+        StartGame.SetActive(true);
+    }
+
+   
+    public void GoBackToMainMenu()
+    {
+
+        MainMenu.SetActive(true);
+        StartGame.SetActive(false);
+    }
+
+    public void GoToLearning()
+    {
+        StartGame.SetActive(false);
+        LearningToDrive.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {

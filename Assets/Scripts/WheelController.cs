@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class WheelController : MonoBehaviour
 {
+
+    public static WheelController instance;
+
+
     [SerializeField] WheelCollider frontRight;
     [SerializeField] WheelCollider frontLeft;
     [SerializeField] WheelCollider backRight;
@@ -38,8 +42,11 @@ public class WheelController : MonoBehaviour
 
     [Header("UI Controller class")]
     public UIController UIController;
-    
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         EngineAudio = GetComponent<audio>();

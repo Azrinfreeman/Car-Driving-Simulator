@@ -8,7 +8,7 @@ public class LevelController : MonoBehaviour
 
     [Header("Lesson Car Tutorial")]
     public bool ParkingLevel;
-    public bool CarMovemenentLevel;
+    public bool CarMovementLevel;
     public bool CarHandbrakeLevel;
 
 

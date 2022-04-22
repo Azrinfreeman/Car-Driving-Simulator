@@ -15,11 +15,14 @@ public class EventController : MonoBehaviour
     //For player position;
     public Transform PlayerPosition;
     public Transform PlayerInCarPosition;
+    public Transform PlayerOutCarPosition;
+    public bool toggle =false;
     void Start()
     {
         PlayerPosition = GameObject.Find("Player").transform;
         PlayerInCarPosition = GameObject.Find("PlayerPlaceholderCoordinate").transform;
         CarPromptTextObject = GameObject.Find("CarPrompt");
+        PlayerOutCarPosition = GameObject.Find("PlayerOutPosition").transform;
         CarPromptTextObject.SetActive(false);
     }
 
@@ -28,16 +31,35 @@ public class EventController : MonoBehaviour
     {
         if (isCarPromptShow)
         {
-
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
-                PlayerController.instance.ToggleCharacterController();
-                PlayerPosition.transform.position = PlayerInCarPosition.transform.position;
-                Debug.Log("E is pressed");
+                toggle = !toggle;
+                if (toggle)
+                {
+                    PlayerController.instance.ToggleCharacterController();
+                    PlayerPosition.transform.position = PlayerInCarPosition.transform.position;
+                    Debug.Log("E is pressed");
 
-               // PlayerController.instance.ToggleCharacterController();
-                PlayerController.instance.inCar = true;
-                CarPromptTextObject.SetActive(false);
+                    // PlayerController.instance.ToggleCharacterController();
+                    PlayerController.instance.inCar = true;
+                    CarPromptTextObject.SetActive(false);
+
+                }
+                else
+                {
+                   
+                    PlayerPosition.transform.position = PlayerOutCarPosition.transform.position;
+                    Debug.Log("E is pressed");
+
+                    // PlayerController.instance.ToggleCharacterController();
+                    PlayerController.instance.inCar = false;
+                    CarPromptTextObject.SetActive(false);
+                    PlayerController.instance.ToggleCharacterController();
+                    WheelController.instance.isEngineStart = false;
+                    WheelController.instance.isPlayerRide = false;
+
+                }
             }
         }
     }

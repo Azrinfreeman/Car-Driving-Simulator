@@ -24,6 +24,9 @@ public class ObjectiveController : MonoBehaviour
         if (level.ParkingLevel)
         {
             objective.text = "Park the car on the highlighted area";
+        }else if (level.CarMovementLevel)
+        {
+            objective.text = "Drive the car all the way to the end";
         }
     }
 }
