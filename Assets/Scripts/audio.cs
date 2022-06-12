@@ -72,7 +72,7 @@ using Random = UnityEngine.Random;
     }
     public void PlayHandBrake()
     {
-        Debug.Log("My car velocoty : "+ myCar.velocity.magnitude);
+       // Debug.Log("My car velocoty : "+ myCar.velocity.magnitude);
         if (!handBrake.isPlaying && myCar.velocity.magnitude < 3)
         {
 

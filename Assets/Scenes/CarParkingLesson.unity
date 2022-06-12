@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -784,6 +784,10 @@ PrefabInstance:
     - target: {fileID: 7627974058755116895, guid: 9bda9650b718e7043ab13e870c316b87, type: 3}
       propertyPath: m_Name
       value: Volvo S90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627974058755116895, guid: 9bda9650b718e7043ab13e870c316b87, type: 3}
+      propertyPath: m_TagString
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bda9650b718e7043ab13e870c316b87, type: 3}
@@ -3514,6 +3518,7 @@ GameObject:
   - component: {fileID: 758026121}
   - component: {fileID: 758026120}
   - component: {fileID: 758026119}
+  - component: {fileID: 758026123}
   m_Layer: 0
   m_Name: Parking1 (1)
   m_TagString: Untagged
@@ -3616,6 +3621,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758026117}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &758026123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758026117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c827187e47b8cb4cb66dc95a590b91d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 1300624546}
 --- !u!1 &765963294
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +4993,10 @@ PrefabInstance:
     - target: {fileID: 2911546781788094070, guid: e190f03186746f945959e8dab85facab, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018816892703682556, guid: e190f03186746f945959e8dab85facab, type: 3}
+      propertyPath: ParkingLevel
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5063142989960244313, guid: e190f03186746f945959e8dab85facab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -7727,6 +7749,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b0c21408e963b6489d8e29fd2026aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300624546 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3018816892703682556, guid: e190f03186746f945959e8dab85facab, type: 3}
+  m_PrefabInstance: {fileID: 891515754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d021c7b72f6be43a9719af85ce4b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1303960894

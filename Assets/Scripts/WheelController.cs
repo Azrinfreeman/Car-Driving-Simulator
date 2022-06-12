@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WheelController : MonoBehaviour
 {
-
+    public Rigidbody rb;
     public static WheelController instance;
 
 
@@ -43,12 +43,17 @@ public class WheelController : MonoBehaviour
     [Header("UI Controller class")]
     public UIController UIController;
 
+    [Header("Mission for players")]
+    public List<bool> CMMission;
+    
+
     private void Awake()
     {
         instance = this;
     }
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         EngineAudio = GetComponent<audio>();
         engineStart = GameObject.Find("EngineStart").GetComponent<AudioSource>();
         UIController = GameObject.Find("Canvas").GetComponent<UIController>();
@@ -72,7 +77,7 @@ public class WheelController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-
+       
         if (!UIController.isPausing)
         {
             VerticalAxis = Input.GetAxis("Vertical");
@@ -163,6 +168,30 @@ public class WheelController : MonoBehaviour
 
         trans.position = position;
         trans.rotation = rotation;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "mission1")
+        {
+            CMMission[0] = true;
+            CMMission[1] = true;
+        }
+        if (other.gameObject.tag == "mission2")
+        {
+            CMMission[2] = true;
+            CMMission[3] = true;
+        }
+        if (other.gameObject.tag == "mission3")
+        {
+            CMMission[4] = true;
+        }
+        if (other.gameObject.tag == "mission4")
+        {
+            CMMission[5] = true;
+        }
+
+
     }
 
 }

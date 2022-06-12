@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Car
+  - mission1
+  - mission2
+  - mission3
+  - mission4
+  - mission5
+  - mission6
   layers:
   - Default
   - TransparentFX
