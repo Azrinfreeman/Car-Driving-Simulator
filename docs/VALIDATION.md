@@ -28,3 +28,7 @@ This review used a sparse source/configuration checkout to avoid downloading the
 5. Check the speedometer and audio. Speed is read from Rigidbody velocity magnitude; no conversion to km/h is established by the source reviewed.
 
 `SceneController` also contains `LoadHandBrakeScene`, targeting `CarHandBrakeLesson`. The tracked scene is `Assets/Scenes/CarHandbrake.unity`, and neither name is enabled in Build Settings. Its reachability was not verified, so the README does not present a working handbrake lesson. Existing object-name lookups and multiple car-controller variants also need scene-level inspection. These observations were documented without changing gameplay.
+
+## Repository-name update — 6 October 2026
+
+After the owner renamed the GitHub repository to `Azrinfreeman/Car-Learning-Simulator`, the README title and clone URL were updated to match. The preceding documentation PR remains merged at `842ee0228718bbc22a119297122efa3c57a967b7`, the baseline for this follow-up. Documentation paths, the name diff, and whitespace were checked; runtime tests were not repeated for this name-only documentation update. Unity's `productName` remains `Car Driving Simulator`, so changing the GitHub name has not renamed the built application. No Unity settings or gameplay files changed.

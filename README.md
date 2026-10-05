@@ -1,4 +1,4 @@
-# Car Driving Simulator
+# Car Learning Simulator
 
 **A Unity 3D driving tutorial prototype with vehicle physics, parking objectives, and first-person interaction.**
 
@@ -30,7 +30,7 @@ The repository contains multiple car-controller implementations. Check the compo
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Azrinfreeman/Car-Driving-Simulator.git
+   git clone https://github.com/Azrinfreeman/Car-Learning-Simulator.git
    ```
 
 2. Install Unity **2021.3.0f1** through Unity Hub and add the cloned repository root as a project. The project contains substantial art/audio assets, so allow time and disk space for the clone and first import.
